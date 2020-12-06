@@ -14,14 +14,14 @@ class CreateTableTarefa extends Migration
     public function up()
     {
         Schema::create('tarefas', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('categoria_id');
 
             $table->string('nome');
             $table->string('criador');
             $table->string('usuarioAlocado');
             $table->text('descricao');
-            $table->slug('slug');
+            $table->string('slug');
 
             $table->timestamps();
 

@@ -11,14 +11,13 @@ class CreateCategoriasTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('categorias', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
 
             $table->string('nome');
             $table->text('descricao');
-            $table->slug('slug');
+            $table->string('slug');
 
             $table->timestamps();
 
