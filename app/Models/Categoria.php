@@ -5,7 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
-{
-    use HasFactory;
+class Categoria extends Model{
+    protected $fillable = ['name', 'descricao'];
+
+    public function products(){
+        return $this->belongstoMany(Tarefa::class); // Pertence a muitos
+    }
 }

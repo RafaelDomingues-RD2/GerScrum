@@ -15,17 +15,16 @@ class CreateTableTarefa extends Migration
     {
         Schema::create('tarefas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('categoria_id');
 
             $table->string('nome');
-            $table->string('criador');
-            $table->string('usuarioAlocado');
             $table->text('descricao');
-            $table->string('slug');
 
             $table->timestamps();
 
             $table->foreign('categoria_id')->references('id')->on('categorias');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
