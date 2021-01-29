@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Http\Requests\CategoriaRequest;
 
 class CategoriaController extends Controller{
 
@@ -39,8 +40,12 @@ class CategoriaController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(CategoriaRequest $request){
         $data = $request->all();
+
+        $request->validate([
+            'name' => 'max:3'
+        ]);
 
         $categoria = \App\Models\Categoria::create($data);
 
@@ -67,7 +72,7 @@ class CategoriaController extends Controller{
      * @param  int  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $categoria){
+    public function update(CategoriaRequest $request, $categoria){
         $data = $request->all();
 
         $categoria = $this->categoria->find($categoria);

@@ -10,10 +10,12 @@ use Tests\TestCase;
 // <server name="DB_DATABASE" value=":memory:"/>
 // <server name="MAIL_MAILER" value="array"/>
 
-class acessoTest extends TestCase
-{
+class acessoTest extends TestCase{
     /** @test */
     public function verificar_acesso_com_usuario_sem_login_ir_login(){
         $response = $this->get('/tarefas')->assertRedirect('/login');
     }
+
 }
+
+

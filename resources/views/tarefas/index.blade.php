@@ -8,7 +8,6 @@
                 <th>Nome</th>
                 <th>Usuario Alocado</th>
                 <th>Categoria</th>
-                <th>Descrição</th>
             </tr>
         </thead>
         <tbody>
@@ -16,9 +15,8 @@
                 <tr>
                     <td>{{$tarefa->id}}</td>
                     <td>{{$tarefa->nome}}</td>
-                    <td>{{$tarefa->user_id}}</td>
-                    <td>{{$tarefa->categoria_id}}</td>
-                    <td>{{$tarefa->descricao}}</td>
+                    <td>{{$tarefa->user->name}}</td>
+                    <td>{{$tarefa->categoria->name}}</td>
                     <td>
                         <div class="btn-group">
                             <a href="{{route('tarefas.edit', ['tarefa' => $tarefa->id])}}" class="btn btn-sm btn-primary">EDITAR</a>

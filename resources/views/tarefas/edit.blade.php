@@ -6,7 +6,12 @@
         @method('PUT')
         <div class="form-group">
             <label>Nome</label>
-            <input type="text" name="nome" class="form-control" value="{{$tarefa->nome}}">
+            <input type="text" name="nome" class="form-control @error('nome') is-invalid @enderror" value="{{$tarefa->nome}}">
+            @error('nome')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="form-group">
            <label>Usuario</label>
@@ -28,9 +33,14 @@
         </div>
         <div class="from-group">
             <label>Descrição</label>
-            <input type="text" name="descricao" class="form-control" value="{{$tarefa->descricao}}">
+            <textarea type="text" name="descricao" class="form-control @error('descricao') is-invalid @enderror" value="{{$tarefa->descricao}}"></textarea>
+            @error('descricao')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
-        <div>
+        <div class="form-group">
             <button type="submit" class="btn btn-lg btn-success">Atualizar Tarefa</button>
         </div>
     </form>

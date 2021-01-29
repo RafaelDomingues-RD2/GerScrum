@@ -24,7 +24,7 @@ class userTest extends DuskTestCase{
         });
     }
     /** @test */
-    public function varefica_cadastro_usuario_sucesso(){
+    public function verefica_cadastro_usuario_sucesso(){
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                     ->type('name', 'Teste automatico_1')

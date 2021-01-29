@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tarefa;
+use App\Http\Requests\TarefaRequest;
 
 class TarefaController extends Controller{
 
@@ -42,7 +43,7 @@ class TarefaController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(TarefaRequest $request){
         $tarefa = \App\Models\Tarefa::create([
             'nome' => $request->nome,
             'user_id' => $request->usuario,
@@ -76,7 +77,7 @@ class TarefaController extends Controller{
      * @param  int  $tarefa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
+    public function update(TarefaRequest $request, $id){
         $this->tarefa->where(['id' => $id])->update([
             'nome' => $request->nome,
             'user_id' => $request->usuario,
