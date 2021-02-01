@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Tarefa extends Model{
-    protected $fillable = ['nome', 'user_id', 'categoria_id', 'criador', 'descricao', 'slug'];
+    protected $fillable = ['name', 'user_id', 'categoria_id', 'descricao'];
 
     public function user(){
         return $this->belongsTo(User::class); // Pertence a

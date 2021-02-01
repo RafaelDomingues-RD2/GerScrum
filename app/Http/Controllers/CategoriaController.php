@@ -43,10 +43,6 @@ class CategoriaController extends Controller{
     public function store(CategoriaRequest $request){
         $data = $request->all();
 
-        $request->validate([
-            'name' => 'max:3'
-        ]);
-
         $categoria = \App\Models\Categoria::create($data);
 
         flash('Categoria cadastrada com Sucesso')->success();
@@ -78,7 +74,7 @@ class CategoriaController extends Controller{
         $categoria = $this->categoria->find($categoria);
         $categoria->update($data);
 
-        flash('Categoria Atualizada com Sucesso')->success();
+        flash('Categoria atualizada com Sucesso')->success();
         return redirect()->route('categorias.index');
     }
 

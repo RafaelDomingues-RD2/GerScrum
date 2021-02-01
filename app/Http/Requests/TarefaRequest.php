@@ -21,11 +21,22 @@ class TarefaRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(){
+        return [
+            'name' => 'required|max:40',
+            'descricao' => 'required',
+        ];
+    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
     {
         return [
-            'nome' => 'required|max:30',
-            'descricao' => 'required',
+            'required' => 'O campo :attribute é obrigatório.'
         ];
     }
 }

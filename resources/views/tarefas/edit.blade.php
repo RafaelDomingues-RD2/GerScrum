@@ -6,8 +6,8 @@
         @method('PUT')
         <div class="form-group">
             <label>Nome</label>
-            <input type="text" name="nome" class="form-control @error('nome') is-invalid @enderror" value="{{$tarefa->nome}}">
-            @error('nome')
+            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{$tarefa->name}}">
+            @error('name')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>

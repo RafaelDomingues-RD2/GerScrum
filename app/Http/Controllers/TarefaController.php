@@ -45,13 +45,13 @@ class TarefaController extends Controller{
      */
     public function store(TarefaRequest $request){
         $tarefa = \App\Models\Tarefa::create([
-            'nome' => $request->nome,
+            'name' => $request->name,
             'user_id' => $request->usuario,
             'categoria_id' => $request->categoria,
             'descricao' => $request->descricao
         ]);
 
-        flash('Tarefas Criada com Sucesso')->success();
+        flash('Tarefa cadastrada com Sucesso')->success();
         return redirect()->route('tarefas.index');
     }
 
@@ -79,7 +79,7 @@ class TarefaController extends Controller{
      */
     public function update(TarefaRequest $request, $id){
         $this->tarefa->where(['id' => $id])->update([
-            'nome' => $request->nome,
+            'name' => $request->name,
             'user_id' => $request->usuario,
             'categoria_id' => $request->categoria,
             'descricao' => $request->descricao

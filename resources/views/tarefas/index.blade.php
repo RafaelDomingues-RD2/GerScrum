@@ -14,7 +14,7 @@
             @foreach($tarefas as $tarefa)
                 <tr>
                     <td>{{$tarefa->id}}</td>
-                    <td>{{$tarefa->nome}}</td>
+                    <td>{{$tarefa->name}}</td>
                     <td>{{$tarefa->user->name}}</td>
                     <td>{{$tarefa->categoria->name}}</td>
                     <td>

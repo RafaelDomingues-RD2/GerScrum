@@ -18,7 +18,7 @@ class CreateTableTarefa extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('categoria_id');
 
-            $table->string('nome');
+            $table->string('name');
             $table->text('descricao');
 
             $table->timestamps();

@@ -24,8 +24,19 @@ class CategoriaRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:30',
-            'descricao' =>'max:90'
+            'name' => 'required',
+        ];
+    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'required' => 'O campo :attribute é obrigatório.'
         ];
     }
 }
